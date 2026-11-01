@@ -20,7 +20,7 @@ The survey also records whether each person has a bank account, which is what th
 
 **My approach, in plain terms**
 
-1. Prepared the data so a computer could learn from it. Yes/No and rural/urban answers became simple 1s and 0s, and categories such as education level and job type were converted into a form the model can use.
+1. Prepared the data so a model could learn from it. Yes/No and rural/urban answers became simple 1s and 0s, and categories such as education level and job type were converted into a form the model can use.
 2. Held back 30% of people as an exam. The model never saw them while learning, so its score on them reflects how it would do on new people.
 3. Rebalanced the learning data. Fewer people have accounts than don't, and a model can ignore the smaller group if left alone. I created realistic extra examples of account holders for training only by resampling using SMOTENC, never for the exam.
 4. Built the whole process as one reusable pipeline. Preparation, rebalancing and prediction run together as a single unit. This keeps the exam honest, because nothing from the exam group leaks into training, and it means the same process can be re-run on new survey data without manual steps.
